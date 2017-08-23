@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Skywind的个人博客</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2017-08-23T07:27:00.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Skywind</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>categories</title>
+    <link href="http://yoursite.com/2017/08/23/categories/"/>
+    <id>http://yoursite.com/2017/08/23/categories/</id>
+    <published>2017-08-23T07:25:42.000Z</published>
+    <updated>2017-08-23T07:27:00.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Testing" scheme="http://yoursite.com/categories/Testing/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>标签测试文章</title>
+    <link href="http://yoursite.com/2017/08/23/%E6%A0%87%E7%AD%BE%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"/>
+    <id>http://yoursite.com/2017/08/23/标签测试文章/</id>
+    <published>2017-08-23T07:15:37.000Z</published>
+    <updated>2017-08-23T07:16:36.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="Testing" scheme="http://yoursite.com/tags/Testing/"/>
+    
+      <category term="iOS" scheme="http://yoursite.com/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>标签</title>
+    <link href="http://yoursite.com/2017/08/23/tags/"/>
+    <id>http://yoursite.com/2017/08/23/tags/</id>
+    <published>2017-08-23T07:09:36.000Z</published>
+    <updated>2017-08-23T07:17:16.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2017/08/22/hello-world/"/>
+    <id>http://yoursite.com/2017/08/22/hello-world/</id>
+    <published>2017-08-22T07:12:30.000Z</published>
+    <updated>2017-08-22T07:12:30.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
