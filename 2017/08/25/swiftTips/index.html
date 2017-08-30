@@ -90,7 +90,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT, Swift, iOS, Objective-C, 程序员, APP研发" />
+  <meta name="keywords" content="iOS,Swift," />
 
 
 
@@ -108,17 +108,20 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="&amp;emsp;&amp;emsp;紧锣密鼓忙了两个月，新的项目终于上线了。&amp;emsp;&amp;emsp;每个项目总会用到一些常用的定义，以及一些边边角角的小功能，为了以后查找方便，这里罗列总结一下。 常用的定义1，控制台输出方法&amp;emsp;&amp;emsp;开发阶段，必然会进行控制台打印来查看变量值，如果不进行改写，直接调用系统print()方法，那么在项目正式上线时必须要删除这些打印，否则会影响程序运行速度。同时自定">
+<meta name="keywords" content="iOS,Swift">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/08/22/hello-world/index.html">
+<meta property="og:title" content="总结：iOS项目开发中那些边边角角的功能">
+<meta property="og:url" content="http://yoursite.com/2017/08/25/swiftTips/index.html">
 <meta property="og:site_name" content="Skywind的个人博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;紧锣密鼓忙了两个月，新的项目终于上线了。&amp;emsp;&amp;emsp;每个项目总会用到一些常用的定义，以及一些边边角角的小功能，为了以后查找方便，这里罗列总结一下。 常用的定义1，控制台输出方法&amp;emsp;&amp;emsp;开发阶段，必然会进行控制台打印来查看变量值，如果不进行改写，直接调用系统print()方法，那么在项目正式上线时必须要删除这些打印，否则会影响程序运行速度。同时自定">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-22T07:12:30.000Z">
+<meta property="og:image" content="http://yoursite.com/2017/08/25/swiftTips/本地化配置.png">
+<meta property="og:updated_time" content="2017-08-30T06:37:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="总结：iOS项目开发中那些边边角角的功能">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;紧锣密鼓忙了两个月，新的项目终于上线了。&amp;emsp;&amp;emsp;每个项目总会用到一些常用的定义，以及一些边边角角的小功能，为了以后查找方便，这里罗列总结一下。 常用的定义1，控制台输出方法&amp;emsp;&amp;emsp;开发阶段，必然会进行控制台打印来查看变量值，如果不进行改写，直接调用系统print()方法，那么在项目正式上线时必须要删除这些打印，否则会影响程序运行速度。同时自定">
+<meta name="twitter:image" content="http://yoursite.com/2017/08/25/swiftTips/本地化配置.png">
 
 
 
@@ -148,13 +151,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/22/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/25/swiftTips/"/>
 
 
 
 
 
-  <title>Hello World | Skywind的个人博客</title>
+  <title>总结：iOS项目开发中那些边边角角的功能 | Skywind的个人博客</title>
   
 
 
@@ -335,7 +338,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/22/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/25/swiftTips/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Skywind">
@@ -352,7 +355,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">总结：iOS项目开发中那些边边角角的功能</h1>
         
 
         <div class="post-meta">
@@ -364,8 +367,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-22T15:12:30+08:00">
-                2017-08-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-25T11:04:32+08:00">
+                2017-08-25
               </time>
             
 
@@ -375,6 +378,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Swift笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">Swift笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -383,8 +408,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/08/22/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2017/08/22/hello-world/" itemprop="commentCount">0</span> comments
+                <a href="/2017/08/25/swiftTips/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2017/08/25/swiftTips/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -412,15 +437,30 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>&emsp;&emsp;紧锣密鼓忙了两个月，新的项目终于上线了。<br>&emsp;&emsp;每个项目总会用到一些常用的定义，以及一些边边角角的小功能，为了以后查找方便，这里罗列总结一下。</p>
+<h3 id="常用的定义"><a href="#常用的定义" class="headerlink" title="常用的定义"></a>常用的定义</h3><h4 id="1，控制台输出方法"><a href="#1，控制台输出方法" class="headerlink" title="1，控制台输出方法"></a>1，控制台输出方法</h4><p>&emsp;&emsp;开发阶段，必然会进行控制台打印来查看变量值，如果不进行改写，直接调用系统<code>print()</code>方法，那么在项目正式上线时必须要删除这些打印，否则会影响程序运行速度。同时自定义打印方法可以帮助我们快速定位到程序输出的位置。下面是常用的定义方式，在<code>Debug</code>模式下进行打印，使用<code>#file</code>、<code>#function</code>和<code>#line</code>进行文件-方法-行号的定位。泛型(<t>)允许我们打印任意类型的变量值。</t></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">/// 打印方法</div><div class="line">///</div><div class="line">/// - Parameters:</div><div class="line">///   - message: 需要打印的信息</div><div class="line">///   - file: 当前文件名</div><div class="line">///   - method: 当前方法名</div><div class="line">///   - line: 当前行</div><div class="line">func printLog&lt;T&gt;(message: T,</div><div class="line">              file: String = #file,</div><div class="line">              method: String = #function,</div><div class="line">              line: Int = #line)</div><div class="line">&#123;</div><div class="line">    #if DEBUG</div><div class="line">        print(&quot;\((file as NSString).lastPathComponent)[\(line)], \(method): \(message)&quot;)</div><div class="line">    #endif</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="2，常用尺寸定义"><a href="#2，常用尺寸定义" class="headerlink" title="2，常用尺寸定义"></a>2，常用尺寸定义</h4><p>&emsp;&emsp;这没什么好说的，界面布局计算时必然会用得到。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// 屏幕宽度</div><div class="line">let kScreenWidth = UIScreen.main.bounds.width</div><div class="line"></div><div class="line">// 屏幕高度</div><div class="line">let kScreenHeight = UIScreen.main.bounds.height</div><div class="line"></div><div class="line">// tabbar高度</div><div class="line">let kTabbarHeight: CGFloat = 49</div><div class="line"></div><div class="line">// navibar 高度(包含状态栏)</div><div class="line">let kNaviBarHeight: CGFloat = 64</div></pre></td></tr></table></figure></p>
+<h4 id="3，计算字符串size"><a href="#3，计算字符串size" class="headerlink" title="3，计算字符串size"></a>3，计算字符串size</h4><p>场景：想象一下，<code>UITableView</code>的cell上布局了一个label，而label的text可能很长也可能很短，那么label在折行显示文字的时候就需要动态设置cell的高度，这就是需要计算文字<code>size</code>的一个案例。<br>&emsp;&emsp;你可以对<code>String</code>进行扩展，添加计算的方法，事实上下面的方法仅仅是计算普通字符串大小的方法，而且是借助了<code>NSString</code>的方法，我定义这个方法仅仅是抛砖引玉，在项目使用中，参数<code>size</code>要么限制宽度，要么限制高度，而最后返回的大小，使用的结果也可能只是<code>width</code>或<code>height</code>，这个使用的时候进行改写就好了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">/// 计算文字大小</div><div class="line">///</div><div class="line">/// - Parameters:</div><div class="line">///   - text: 目标字符串</div><div class="line">///   - font: 字体及字号</div><div class="line">///   - size: 限制size</div><div class="line">/// - Returns: 计算后的rect</div><div class="line">func getTextRectSize(text: NSString,font: UIFont,size: CGSize) -&gt; CGRect &#123;</div><div class="line">    let attributes = [NSFontAttributeName: font]</div><div class="line">    let option = NSStringDrawingOptions.usesLineFragmentOrigin</div><div class="line">    let rect:CGRect = text.boundingRect(with: size, options: option, attributes: attributes, context: nil)</div><div class="line">    return rect;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="常用的扩展"><a href="#常用的扩展" class="headerlink" title="常用的扩展"></a>常用的扩展</h3><h4 id="1，UIColor"><a href="#1，UIColor" class="headerlink" title="1，UIColor"></a>1，UIColor</h4><p>&emsp;&emsp;<code>UIColor</code>只提供了RGB的API，这在我们开发使用时不是很方便，比如设计师给我们的十六进制色值，还需要进行rgb色值转换，非常麻烦。<br>&emsp;&emsp;我在<code>UIColor</code>的扩展里主要考虑了<code>iOS10</code>的真彩色API，同时封装了十六进制色值转换、十六进制字符串色值转换的方法。<br>&emsp;&emsp;最后，生成随机颜色以及生成纯色图片的方法，就当是彩蛋吧。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div></pre></td><td class="code"><pre><div class="line">extension UIColor &#123;</div><div class="line">    static func colorFromRGBA(r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat = 1.0) -&gt; (UIColor) &#123;</div><div class="line">        if #available(iOS 10, *) &#123;</div><div class="line">            return UIColor(displayP3Red: r/255.0, green: g/255.0, blue: b/255.0, alpha: a)</div><div class="line">        &#125; else &#123;</div><div class="line">            return UIColor(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: a)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    /// 十六进制色值转换为颜色</div><div class="line">    ///</div><div class="line">    /// - parameter hex: 十六进制色值</div><div class="line">    ///</div><div class="line">    /// - returns: 转换的颜色</div><div class="line">    static  func colorFromHex(_ hex: UInt32, alpha: CGFloat = 1.0) -&gt;(UIColor) &#123;</div><div class="line">        </div><div class="line">        let red = CGFloat((hex &amp; 0xFF0000) &gt;&gt; 16)</div><div class="line">        let green = CGFloat((hex &amp; 0x00FF00) &gt;&gt; 8)</div><div class="line">        let blue  = CGFloat((hex &amp; 0x0000FF))</div><div class="line">        </div><div class="line">        return UIColor.colorFromRGBA(r: red, g: green, b: blue, a: alpha)</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    /// 十六进制色值字符串转换为颜色</div><div class="line">    ///</div><div class="line">    /// - parameter string: 十六进制色值字符串</div><div class="line">    ///</div><div class="line">    /// - returns: 转换的颜色</div><div class="line">    static func colorFromString(_ string: String, alpha: CGFloat = 1.0) -&gt; UIColor &#123;</div><div class="line">        </div><div class="line">        var cStr = string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()</div><div class="line">        </div><div class="line">        if cStr.characters.count &lt; 6 &#123;</div><div class="line">            </div><div class="line">            return UIColor.white</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        if cStr.hasPrefix(&quot;#&quot;) &#123;</div><div class="line">            cStr = cStr.substring(from: cStr.index(cStr.startIndex, offsetBy: 1))</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        if cStr.characters.count != 6 &#123;</div><div class="line">            return UIColor.white</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        var range = NSRange.init()</div><div class="line">        range.location = 0</div><div class="line">        range.length = 2</div><div class="line">        </div><div class="line">        let ocStr = cStr as NSString</div><div class="line">        </div><div class="line">        let rStr = ocStr.substring(with: range)</div><div class="line">        range.location = 2</div><div class="line">        let gStr = ocStr.substring(with: range)</div><div class="line">        range.location = 4</div><div class="line">        let bStr = ocStr.substring(with: range)</div><div class="line">        </div><div class="line">        var r = UInt32()</div><div class="line">        var g = UInt32()</div><div class="line">        var b = UInt32()</div><div class="line">        </div><div class="line">        Scanner(string: rStr).scanHexInt32(&amp;r)</div><div class="line">        Scanner(string: gStr).scanHexInt32(&amp;g)</div><div class="line">        Scanner(string: bStr).scanHexInt32(&amp;b)</div><div class="line">        </div><div class="line">        return UIColor.colorFromRGBA(r: CGFloat(r), g: CGFloat(g), b: CGFloat(b), a: CGFloat(alpha))</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    /// 随机颜色</div><div class="line">    ///</div><div class="line">    /// - returns: 返回随机颜色</div><div class="line">    static func randomColor(a: CGFloat = 1.0) -&gt; (UIColor) &#123;</div><div class="line">        </div><div class="line">        let r = CGFloat(arc4random()%255)</div><div class="line">        let g = CGFloat(arc4random()%255)</div><div class="line">        let b = CGFloat(arc4random()%255)</div><div class="line">        </div><div class="line">        return UIColor.colorFromRGBA(r: r, g: g, b: b, a: a)</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    /// 生成指定颜色的图片</div><div class="line">    ///</div><div class="line">    /// - returns: 相应颜色的图片</div><div class="line">    func image() -&gt; UIImage &#123;</div><div class="line">        </div><div class="line">        let imageSize = CGSize.init(width: 10, height: 10)</div><div class="line">        UIGraphicsBeginImageContextWithOptions(imageSize, false, UIScreen.main.scale)</div><div class="line">        self.set()</div><div class="line">        UIRectFill(CGRect.init(x: 0, y: 0, width: imageSize.width, height: imageSize.height))</div><div class="line">        let img = UIGraphicsGetImageFromCurrentImageContext()</div><div class="line">        UIGraphicsEndImageContext()</div><div class="line">        </div><div class="line">        let result = img?.stretchableImage(withLeftCapWidth: Int((img?.size.width)!/2.0), topCapHeight: Int((img?.size.height)!/2.0))</div><div class="line">        </div><div class="line">        return result!</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>调用方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">let color:  UIColor = UIColor.colorFromRGBA(r: 100, g: 23, b: 18)</div><div class="line">let color2: UIColor = UIColor.colorFromHex(0xab33fa)</div><div class="line">let color3: UIColor = UIColor.colorFromString(&quot;#00ff00&quot;, alpha: 0.4)</div><div class="line">let color4: UIColor = UIColor.randomColor(a: 0.9)</div></pre></td></tr></table></figure>
+<blockquote>
+<p>关于方法名不够简洁的问题，方法名中的“colorFrom”可以去掉，不过个人觉得Swift虽然追求代码简洁，但是出于多人合作开发以及代码可读性的考虑，我还是没有去掉。另外就是以统一的开头(比如“color”)命名，敲代码时有助于提高效率，不用思考具体方法名，打出“color”就可以自动提示出方法了。<br>命名问题因人而异，这里不过多讨论了。</p>
+</blockquote>
+<h4 id="UIFont"><a href="#UIFont" class="headerlink" title="UIFont"></a>UIFont</h4><p>&emsp;&emsp;一般的项目不会用到过多的字体，扩展的目的是在使用非系统字体时不用每次都输入字体名。当然了，事实上一两个字体时也完全不用扩展，直接定义成全局的方法就行了。不过为了管理方便，写成扩展更规范整洁。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">extension UIFont &#123;</div><div class="line">    static func fontPFMedium(size: CGFloat) -&gt; UIFont &#123;</div><div class="line">        return UIFont(name: &quot;PingFang-SC-Medium&quot;, size: size) ?? UIFont.boldSystemFont(ofSize: size)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>Swift中调用<code>UIFont(name: String, size: Float) -&gt;UIFont?</code>，为了避免字体不存在而导致Crash，最好用系统字体作为备选字体。</p>
+</blockquote>
+<h3 id="小功能"><a href="#小功能" class="headerlink" title="小功能"></a>小功能</h3><h4 id="获取系统以及应用信息"><a href="#获取系统以及应用信息" class="headerlink" title="获取系统以及应用信息"></a>获取系统以及应用信息</h4><h4 id="评分"><a href="#评分" class="headerlink" title="评分"></a>评分</h4><h4 id="剪切板"><a href="#剪切板" class="headerlink" title="剪切板"></a>剪切板</h4><h4 id="系统设置"><a href="#系统设置" class="headerlink" title="系统设置"></a>系统设置</h4><h4 id="设置系统导航栏样式"><a href="#设置系统导航栏样式" class="headerlink" title="设置系统导航栏样式"></a>设置系统导航栏样式</h4><p>&emsp;&emsp;通常情况下，应用需要统一风格的导航栏，主要是设置导航栏的返回按钮、标题样式，我们可以再<code>AppDelegate.swift</code>里完成。在<code>application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -&gt; Bool</code>方法中添加如下代码进行设置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// 统一导航栏返回按钮样式</div><div class="line">let backImage = UIImage(named: &quot;nav_back&quot;)?.withRenderingMode(.alwaysOriginal) //返回按钮图标</div><div class="line">UINavigationBar.appearance().backIndicatorImage = backImage</div><div class="line">UINavigationBar.appearance().backIndicatorTransitionMaskImage = backImage</div><div class="line">UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -80.0), for: .default)</div><div class="line"></div><div class="line">// 统一导航栏标题样式</div><div class="line">UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName:  UIFont(name: &quot;UIFont.systemFont(ofSize: 17), NSForegroundColorAttributeName: UIColor.colorFromString(&quot;#333333&quot;)]</div></pre></td></tr></table></figure></p>
+<p>在设置返回按钮图标的时候，需要同时设置<code>backIndicatorImage</code>和<code>backIndicatorTransitionMaskImage</code>，下面是API的说明：</p>
+<blockquote>
+<p>The back indicator image is shown beside the back button.<br>     The back indicator transition mask image is used as a mask for content during push and pop transitions<br>     Note: These properties must both be set if you want to customize the back indicator image.</p>
+</blockquote>
+<p>翻译过来就是说，<code>backIndicatorImage</code>是正常显示的图标，<code>backIndicatorTransitionMaskImage</code>是在页面<code>push</code>和<code>pop</code>的时候的图标。所以需要设置导航返回按钮时，两个都要设置。<br><code>setBackButtonTitlePositionAdjustment</code>是为了调整图标的显示位置。因为我不需要文字标题，所以直接把位置隐藏了。</p>
+<h4 id="相册显示本地化语言"><a href="#相册显示本地化语言" class="headerlink" title="相册显示本地化语言"></a>相册显示本地化语言</h4><p>调用系统相册时，按钮、标题等文字默认是英文的，我们需要自项目的<code>info.plist</code>中，将<code>Localized resources can be mixed</code>选项设为YES, 将<code>Localization native development region</code>设置为需要设置的国家，比如<code>China</code>。<br><img src="/2017/08/25/swiftTips/本地化配置.png" alt="系统语言设置" title="系统语言设置"></p>
+<p>未完待续。。。</p>
 
       
     </div>
@@ -465,6 +505,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+            <a href="/tags/Swift/" rel="tag"># Swift</a>
+          
+        </div>
+      
 
       
       
@@ -474,15 +522,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/08/24/如何引入图片/" rel="next" title="如何引入图片">
+                <i class="fa fa-chevron-left"></i> 如何引入图片
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/23/tags/" rel="prev" title="标签">
-                标签 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -724,7 +772,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的定义"><span class="nav-number">1.</span> <span class="nav-text">常用的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1，控制台输出方法"><span class="nav-number">1.1.</span> <span class="nav-text">1，控制台输出方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2，常用尺寸定义"><span class="nav-number">1.2.</span> <span class="nav-text">2，常用尺寸定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3，计算字符串size"><span class="nav-number">1.3.</span> <span class="nav-text">3，计算字符串size</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的扩展"><span class="nav-number">2.</span> <span class="nav-text">常用的扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1，UIColor"><span class="nav-number">2.1.</span> <span class="nav-text">1，UIColor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UIFont"><span class="nav-number">2.2.</span> <span class="nav-text">UIFont</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小功能"><span class="nav-number">3.</span> <span class="nav-text">小功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#获取系统以及应用信息"><span class="nav-number">3.1.</span> <span class="nav-text">获取系统以及应用信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#评分"><span class="nav-number">3.2.</span> <span class="nav-text">评分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#剪切板"><span class="nav-number">3.3.</span> <span class="nav-text">剪切板</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#系统设置"><span class="nav-number">3.4.</span> <span class="nav-text">系统设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置系统导航栏样式"><span class="nav-number">3.5.</span> <span class="nav-text">设置系统导航栏样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#相册显示本地化语言"><span class="nav-number">3.6.</span> <span class="nav-text">相册显示本地化语言</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -886,9 +934,9 @@ var jiathis_config={
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/08/22/hello-world/';
-          this.page.identifier = '2017/08/22/hello-world/';
-          this.page.title = 'Hello World';
+          this.page.url = 'http://yoursite.com/2017/08/25/swiftTips/';
+          this.page.identifier = '2017/08/25/swiftTips/';
+          this.page.title = '总结：iOS项目开发中那些边边角角的功能';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://Jia.disqus.com/embed.js';

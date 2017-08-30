@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[总结：iOS项目开发中那些边边角角的功能]]></title>
+    <url>%2F2017%2F08%2F25%2FswiftTips%2F</url>
+    <content type="text"><![CDATA[&emsp;&emsp;紧锣密鼓忙了两个月，新的项目终于上线了。&emsp;&emsp;每个项目总会用到一些常用的定义，以及一些边边角角的小功能，为了以后查找方便，这里罗列总结一下。 常用的定义1，控制台输出方法&emsp;&emsp;开发阶段，必然会进行控制台打印来查看变量值，如果不进行改写，直接调用系统print()方法，那么在项目正式上线时必须要删除这些打印，否则会影响程序运行速度。同时自定义打印方法可以帮助我们快速定位到程序输出的位置。下面是常用的定义方式，在Debug模式下进行打印，使用#file、#function和#line进行文件-方法-行号的定位。泛型()允许我们打印任意类型的变量值。 12345678910111213141516/// 打印方法////// - Parameters:/// - message: 需要打印的信息/// - file: 当前文件名/// - method: 当前方法名/// - line: 当前行func printLog&lt;T&gt;(message: T, file: String = #file, method: String = #function, line: Int = #line)&#123; #if DEBUG print(&quot;\((file as NSString).lastPathComponent)[\(line)], \(method): \(message)&quot;) #endif&#125; 2，常用尺寸定义&emsp;&emsp;这没什么好说的，界面布局计算时必然会用得到。1234567891011// 屏幕宽度let kScreenWidth = UIScreen.main.bounds.width// 屏幕高度let kScreenHeight = UIScreen.main.bounds.height// tabbar高度let kTabbarHeight: CGFloat = 49// navibar 高度(包含状态栏)let kNaviBarHeight: CGFloat = 64 3，计算字符串size场景：想象一下，UITableView的cell上布局了一个label，而label的text可能很长也可能很短，那么label在折行显示文字的时候就需要动态设置cell的高度，这就是需要计算文字size的一个案例。&emsp;&emsp;你可以对String进行扩展，添加计算的方法，事实上下面的方法仅仅是计算普通字符串大小的方法，而且是借助了NSString的方法，我定义这个方法仅仅是抛砖引玉，在项目使用中，参数size要么限制宽度，要么限制高度，而最后返回的大小，使用的结果也可能只是width或height，这个使用的时候进行改写就好了。12345678910111213/// 计算文字大小////// - Parameters:/// - text: 目标字符串/// - font: 字体及字号/// - size: 限制size/// - Returns: 计算后的rectfunc getTextRectSize(text: NSString,font: UIFont,size: CGSize) -&gt; CGRect &#123; let attributes = [NSFontAttributeName: font] let option = NSStringDrawingOptions.usesLineFragmentOrigin let rect:CGRect = text.boundingRect(with: size, options: option, attributes: attributes, context: nil) return rect;&#125; 常用的扩展1，UIColor&emsp;&emsp;UIColor只提供了RGB的API，这在我们开发使用时不是很方便，比如设计师给我们的十六进制色值，还需要进行rgb色值转换，非常麻烦。&emsp;&emsp;我在UIColor的扩展里主要考虑了iOS10的真彩色API，同时封装了十六进制色值转换、十六进制字符串色值转换的方法。&emsp;&emsp;最后，生成随机颜色以及生成纯色图片的方法，就当是彩蛋吧。 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697extension UIColor &#123; static func colorFromRGBA(r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat = 1.0) -&gt; (UIColor) &#123; if #available(iOS 10, *) &#123; return UIColor(displayP3Red: r/255.0, green: g/255.0, blue: b/255.0, alpha: a) &#125; else &#123; return UIColor(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: a) &#125; &#125; /// 十六进制色值转换为颜色 /// /// - parameter hex: 十六进制色值 /// /// - returns: 转换的颜色 static func colorFromHex(_ hex: UInt32, alpha: CGFloat = 1.0) -&gt;(UIColor) &#123; let red = CGFloat((hex &amp; 0xFF0000) &gt;&gt; 16) let green = CGFloat((hex &amp; 0x00FF00) &gt;&gt; 8) let blue = CGFloat((hex &amp; 0x0000FF)) return UIColor.colorFromRGBA(r: red, g: green, b: blue, a: alpha) &#125; /// 十六进制色值字符串转换为颜色 /// /// - parameter string: 十六进制色值字符串 /// /// - returns: 转换的颜色 static func colorFromString(_ string: String, alpha: CGFloat = 1.0) -&gt; UIColor &#123; var cStr = string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased() if cStr.characters.count &lt; 6 &#123; return UIColor.white &#125; if cStr.hasPrefix(&quot;#&quot;) &#123; cStr = cStr.substring(from: cStr.index(cStr.startIndex, offsetBy: 1)) &#125; if cStr.characters.count != 6 &#123; return UIColor.white &#125; var range = NSRange.init() range.location = 0 range.length = 2 let ocStr = cStr as NSString let rStr = ocStr.substring(with: range) range.location = 2 let gStr = ocStr.substring(with: range) range.location = 4 let bStr = ocStr.substring(with: range) var r = UInt32() var g = UInt32() var b = UInt32() Scanner(string: rStr).scanHexInt32(&amp;r) Scanner(string: gStr).scanHexInt32(&amp;g) Scanner(string: bStr).scanHexInt32(&amp;b) return UIColor.colorFromRGBA(r: CGFloat(r), g: CGFloat(g), b: CGFloat(b), a: CGFloat(alpha)) &#125; /// 随机颜色 /// /// - returns: 返回随机颜色 static func randomColor(a: CGFloat = 1.0) -&gt; (UIColor) &#123; let r = CGFloat(arc4random()%255) let g = CGFloat(arc4random()%255) let b = CGFloat(arc4random()%255) return UIColor.colorFromRGBA(r: r, g: g, b: b, a: a) &#125; /// 生成指定颜色的图片 /// /// - returns: 相应颜色的图片 func image() -&gt; UIImage &#123; let imageSize = CGSize.init(width: 10, height: 10) UIGraphicsBeginImageContextWithOptions(imageSize, false, UIScreen.main.scale) self.set() UIRectFill(CGRect.init(x: 0, y: 0, width: imageSize.width, height: imageSize.height)) let img = UIGraphicsGetImageFromCurrentImageContext() UIGraphicsEndImageContext() let result = img?.stretchableImage(withLeftCapWidth: Int((img?.size.width)!/2.0), topCapHeight: Int((img?.size.height)!/2.0)) return result! &#125;&#125; 调用方法： 1234let color: UIColor = UIColor.colorFromRGBA(r: 100, g: 23, b: 18)let color2: UIColor = UIColor.colorFromHex(0xab33fa)let color3: UIColor = UIColor.colorFromString(&quot;#00ff00&quot;, alpha: 0.4)let color4: UIColor = UIColor.randomColor(a: 0.9) 关于方法名不够简洁的问题，方法名中的“colorFrom”可以去掉，不过个人觉得Swift虽然追求代码简洁，但是出于多人合作开发以及代码可读性的考虑，我还是没有去掉。另外就是以统一的开头(比如“color”)命名，敲代码时有助于提高效率，不用思考具体方法名，打出“color”就可以自动提示出方法了。命名问题因人而异，这里不过多讨论了。 UIFont&emsp;&emsp;一般的项目不会用到过多的字体，扩展的目的是在使用非系统字体时不用每次都输入字体名。当然了，事实上一两个字体时也完全不用扩展，直接定义成全局的方法就行了。不过为了管理方便，写成扩展更规范整洁。12345extension UIFont &#123; static func fontPFMedium(size: CGFloat) -&gt; UIFont &#123; return UIFont(name: &quot;PingFang-SC-Medium&quot;, size: size) ?? UIFont.boldSystemFont(ofSize: size) &#125;&#125; Swift中调用UIFont(name: String, size: Float) -&gt;UIFont?，为了避免字体不存在而导致Crash，最好用系统字体作为备选字体。 小功能获取系统以及应用信息评分剪切板系统设置设置系统导航栏样式&emsp;&emsp;通常情况下，应用需要统一风格的导航栏，主要是设置导航栏的返回按钮、标题样式，我们可以再AppDelegate.swift里完成。在application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -&gt; Bool方法中添加如下代码进行设置：12345678// 统一导航栏返回按钮样式let backImage = UIImage(named: &quot;nav_back&quot;)?.withRenderingMode(.alwaysOriginal) //返回按钮图标UINavigationBar.appearance().backIndicatorImage = backImageUINavigationBar.appearance().backIndicatorTransitionMaskImage = backImageUIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -80.0), for: .default)// 统一导航栏标题样式UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name: &quot;UIFont.systemFont(ofSize: 17), NSForegroundColorAttributeName: UIColor.colorFromString(&quot;#333333&quot;)] 在设置返回按钮图标的时候，需要同时设置backIndicatorImage和backIndicatorTransitionMaskImage，下面是API的说明： The back indicator image is shown beside the back button. The back indicator transition mask image is used as a mask for content during push and pop transitions Note: These properties must both be set if you want to customize the back indicator image. 翻译过来就是说，backIndicatorImage是正常显示的图标，backIndicatorTransitionMaskImage是在页面push和pop的时候的图标。所以需要设置导航返回按钮时，两个都要设置。setBackButtonTitlePositionAdjustment是为了调整图标的显示位置。因为我不需要文字标题，所以直接把位置隐藏了。 相册显示本地化语言调用系统相册时，按钮、标题等文字默认是英文的，我们需要自项目的info.plist中，将Localized resources can be mixed选项设为YES, 将Localization native development region设置为需要设置的国家，比如China。 未完待续。。。]]></content>
+      <categories>
+        <category>Swift笔记</category>
+      </categories>
+      <tags>
+        <tag>iOS</tag>
+        <tag>Swift</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[如何引入图片]]></title>
+    <url>%2F2017%2F08%2F24%2F%E5%A6%82%E4%BD%95%E5%BC%95%E5%85%A5%E5%9B%BE%E7%89%87%2F</url>
+    <content type="text"><![CDATA[这篇文章是为了测试引入图片的]]></content>
+      <categories>
+        <category>Testing</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[categories]]></title>
     <url>%2F2017%2F08%2F23%2Fcategories%2F</url>
     <content type="text"></content>
@@ -9,9 +32,9 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[标签测试文章]]></title>
+    <title><![CDATA[改到]]></title>
     <url>%2F2017%2F08%2F23%2F%E6%A0%87%E7%AD%BE%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[如何进行iOS开发]]></content>
       <tags>
         <tag>Testing</tag>
         <tag>iOS</tag>

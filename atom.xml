@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-23T08:57:01.000Z</updated>
+  <updated>2017-08-30T06:37:58.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>总结：iOS项目开发中那些边边角角的功能</title>
+    <link href="http://yoursite.com/2017/08/25/swiftTips/"/>
+    <id>http://yoursite.com/2017/08/25/swiftTips/</id>
+    <published>2017-08-25T03:04:32.000Z</published>
+    <updated>2017-08-30T06:37:58.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;emsp;&amp;emsp;紧锣密鼓忙了两个月，新的项目终于上线了。&lt;br&gt;&amp;emsp;&amp;emsp;每个项目总会用到一些常用的定义，以及一些边边角角的小功能，为了以后查找方便，这里罗列总结一下。&lt;/p&gt;
+&lt;h3 id=&quot;常用的定义&quot;&gt;&lt;a href=&quot;#常用的定义&quot; class
+    
+    </summary>
+    
+      <category term="Swift笔记" scheme="http://yoursite.com/categories/Swift%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="iOS" scheme="http://yoursite.com/tags/iOS/"/>
+    
+      <category term="Swift" scheme="http://yoursite.com/tags/Swift/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何引入图片</title>
+    <link href="http://yoursite.com/2017/08/24/%E5%A6%82%E4%BD%95%E5%BC%95%E5%85%A5%E5%9B%BE%E7%89%87/"/>
+    <id>http://yoursite.com/2017/08/24/如何引入图片/</id>
+    <published>2017-08-24T02:24:55.000Z</published>
+    <updated>2017-08-24T02:30:02.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这篇文章是为了测试引入图片的&lt;br&gt;&lt;img src=&quot;/2017/08/24/如何引入图片/avatar.JPG&quot; alt=&quot;This is an example image&quot; title=&quot;This is an example image&quot;&gt;&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="Testing" scheme="http://yoursite.com/categories/Testing/"/>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>categories</title>
@@ -32,13 +76,15 @@
   </entry>
   
   <entry>
-    <title>标签测试文章</title>
+    <title>改到</title>
     <link href="http://yoursite.com/2017/08/23/%E6%A0%87%E7%AD%BE%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"/>
     <id>http://yoursite.com/2017/08/23/标签测试文章/</id>
     <published>2017-08-23T07:15:37.000Z</published>
-    <updated>2017-08-23T07:16:36.000Z</updated>
+    <updated>2017-08-24T02:21:42.000Z</updated>
     
     <summary type="html">
+    
+      &lt;h6 id=&quot;如何进行iOS开发&quot;&gt;&lt;a href=&quot;#如何进行iOS开发&quot; class=&quot;headerlink&quot; title=&quot;如何进行iOS开发&quot;&gt;&lt;/a&gt;如何进行iOS开发&lt;/h6&gt;
     
     </summary>
     
